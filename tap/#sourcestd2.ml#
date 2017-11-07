@@ -1,0 +1,85 @@
+(********* Exercice  1  *********)
+ 
+let pi = 3.1415;;
+let rot_gen pi (x,y,ang) = 
+  let newx = x*.cos(ang*.pi) +. y*.sin(ang*.pi) in
+  let newy = x*.sin(ang*.pi) -. y*.cos(ang*.pi) in (newx,newy);;
+let rot = (rot_gen pi);;
+let pi = "troispointquatorze";;
+rot (1.,0.,1.);;
+ 
+#include <stdio.h>
+
+int i = 0;
+int f (int j) { i = i + j;  return i; }
+
+int main(void) {
+  f(1); printf("%d, ", i); 
+  f(2); printf("%d, ", i); 
+  i=421; f(2); printf("%d \n", i); 
+} 
+ 
+using System;
+class Program {
+  public static void Main() {
+    Console.WriteLine("Caramba !");
+} } 
+
+ 
+(********* Exercice  2  *********)
+ 
+// Type declaration
+public delegate int OneInt (int value);
+// Anonymous function
+public static OneInt square = new OneInt(i => i*i);
+// One-time declaration using predefined type
+public static Func<int, int> cube = i => i*i*i;
+// Delegate using multiple arguments
+public delegate void Concat (string s1, string s2);
+public static Concat c = (a,b) =>
+                            Console.WriteLine(a+b);
+// fonction qui prend 2 entiers et une fonction en parametres applique la fonction aux 2 entiers .
+
+   
+   
+using System;
+using Gtk;
+
+public class GtkHelloWorld {
+  static void onClick (object obj, EventArgs args) {
+    Console.WriteLine("I have been clicked by a {0}", obj); }
+
+  public static void Main() {
+    Application.Init();
+ 
+    //Create the Window
+    Window myWin = new Window("Brave new world");
+    myWin.Resize(200,200);
+    HBox myBox = new HBox (false, 10);
+    myWin.Add(myBox);
+
+    // Set up a button object.
+    Button hello = new Button ("Hello");
+    hello.Clicked += new EventHandler(onClick);
+    myBox.Add(hello);
+
+    //Show Everything     
+    myWin.ShowAll(); 
+    Application.Run(); }
+}
+ 
+// mcs -pkg:gtk-sharp-2.0 fichier.cs && mono fichier.exe
+ 
+(********* Exercice  3  *********)
+ 
+import java.util.Arrays;
+import java.util.List;
+
+class Functional {
+
+    public static void main(String[] args) {
+	List<Integer> lis   = Arrays.asList(7,4,666,9,41,5);
+	// default void    forEach(Consumer<? super T> action)
+    };
+}
+ 
